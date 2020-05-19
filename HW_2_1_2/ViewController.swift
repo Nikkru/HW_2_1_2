@@ -32,6 +32,19 @@ class ViewController: UIViewController {
     
     @IBAction func switchTraficLightButton() {
         
+        if yellowTraficLightView.layer.opacity == redTraficLightView.layer.opacity {
+            redTraficLightView.layer.opacity = 1
+            greenTraficLightView.layer.opacity = 0.2
+            switchTraficLightButtonText.setTitle("NEXT", for: .normal)
+            
+        } else if yellowTraficLightView.layer.opacity == greenTraficLightView.layer.opacity {
+            redTraficLightView.layer.opacity = 0.2
+            yellowTraficLightView.layer.opacity = 1
+            
+        } else if redTraficLightView.layer.opacity == greenTraficLightView.layer.opacity {
+            yellowTraficLightView.layer.opacity = 0.2
+            greenTraficLightView.layer.opacity = 1
+        }
     }
     
 }
